@@ -282,74 +282,73 @@ h2 {
     transform-origin: top left;
 }
 
-/* Services Section (What I Do) */
-/* Animasi masuk */
-@keyframes fadeUp {
-    0% {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Awal sebelum muncul di layar */
-  .service-card {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  /* Saat muncul di layar */
-  .service-card.show {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeUp 0.6s ease-out;
-  }
-  
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding-bottom: 50px;
-}
-
-.service-card {
-    background-color: var(--bg-medium);
-    padding: 50px 30px; /* lebih tinggi biar ikon & teks seimbang */
-    border-radius: 15px;
-    border-top: 5px solid var(--accent-neon);
-    transition: transform 0.3s, box-shadow 0.3s;
+/* === Services Section === */
+.services-section {
+    padding: 80px 10%;
+    color: var(--text-light);
     text-align: center;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(187, 134, 252, 0.35); /* Shadow lebih menonjol */
-}
-
-/* Icon lebih besar dan menonjol */
-.service-card i {
-    font-size: 3rem; /* sebelumnya 2em */
+  }
+  
+  .services-section h2 {
     color: var(--accent-neon);
-    margin-bottom: 20px;
-    transition: color 0.3s;
-}
-
-/* Judul lebih besar dan tegas */
-.service-card h3 {
-    margin-top: 0;
-    font-size: 1.6rem; /* lebih besar dari sebelumnya */
-    font-weight: 700;
-    color: var(--text-primary, #fff);
-}
-
-/* Hilangkan deskripsi jika masih ada */
-.service-card p {
-    display: none;
-}
+    font-size: 2.2em;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  
+  .services-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-neon);
+    margin: 10px auto 0;
+    border-radius: 5px;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .service-card {
+    background-color: var(--bg-dark);
+    padding: 40px 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(187, 134, 252, 0.15);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.05);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(187, 134, 252, 0.3);
+    border-color: var(--accent-neon);
+  }
+  
+  .service-card i {
+    font-size: 2.5em;
+    color: var(--accent-neon);
+    margin-bottom: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .service-card:hover i {
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  .service-card h3 {
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--accent-neon);
+  }
+  
+  
+  
 
 
 .resume-timeline {
@@ -468,7 +467,47 @@ h2 {
     .timeline-item::after {
       left: -27px;
     }
+    /* === Animasi Resume Timeline === */
+@keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .timeline-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  
+  .timeline-item.visible.left {
+    animation: fadeInLeft 0.8s ease forwards;
+    opacity: 1;
+  }
+  
+  .timeline-item.visible.right {
+    animation: fadeInRight 0.8s ease forwards;
+    opacity: 1;
+  }
+  
+  }
+
 
 /* Portfolio Section */
 .portfolio-section {
@@ -727,8 +766,8 @@ h2 {
 /* Contact Section */
 .contact-section {
     text-align: center;
-    padding: 80px 0;
     background-color: var(--bg-medium);
+    padding: 80px 0;
     margin-top: 50px;
     border-radius: 10px;
 }
@@ -816,6 +855,78 @@ h2 {
     margin-top: 40px;
 }
 
+/* === Achievements Section === */
+.achievements-section {
+    padding: 80px 10%;
+    color: var(--text-light);
+    text-align: center;
+  }
+  
+  .achievements-section h2 {
+    color: var(--accent-neon);
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .achievements-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-neon);
+    margin: 10px auto 0;
+    border-radius: 5px;
+  }
+  
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  
+  .achievement-card {
+    background-color: var(--bg-dark);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-neon);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px rgba(187, 134, 252, 0.25);
+  }
+  
+  .achievement-icon {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: var(--accent-neon);
+  }
+  
+  .achievement-card h4 {
+    color: var(--accent-neon);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+  }
+  
+  .achievement-card p {
+    color: var(--text-muted);
+    font-size: 0.95em;
+    line-height: 1.6;
+  }
+  
+  .achievement-year {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: var(--text-light);
+    background-color: rgba(187, 134, 252, 0.1);
+    padding: 5px 12px;
+    border-radius: 5px;
+  }
+  
 /* Footer */
 footer {
     background-color: var(--bg-dark);
