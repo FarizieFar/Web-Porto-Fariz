@@ -1,11 +1,11 @@
 /* Definisi Warna dan Font */
 :root {
-    --bg-dark: #1f2a41; /* Latar belakang gelap utama */
-    --bg-medium: #2a3c58; /* Latar belakang card/elemen sedikit lebih terang */
+    --bg-dark: #161b22; /* Latar belakang gelap utama, lebih dalam */
+    --bg-medium: #21262d; /* Latar belakang card/elemen, lebih gelap */
     --accent-blue: #007bff; /* Warna biru aksen (diganti nanti untuk ungu neon) */
-    --accent-neon: #7f00ff; /* Ungu neon untuk aksen cerah */
-    --text-light: #ffffff;
-    --text-muted: #c0c0c0;
+    --accent-neon: #bb86fc; /* Ungu neon yang lebih cerah dan modern */
+    --text-light: #e0e0e0; /* Teks terang, sedikit lebih lembut */
+    --text-muted: #a0a0a0; /* Teks muted, lebih lembut */
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -43,6 +43,11 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-dark);
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Shadow lebih menonjol */
 }
 
 .logo {
@@ -85,6 +90,17 @@ h2 {
 .hero-content {
     max-width: 50%;
     z-index: 10;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInContent 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInContent {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .greeting {
@@ -151,7 +167,18 @@ h2 {
     width: 80%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 0 20px rgba(127, 0, 255, 0.4);
+    box-shadow: 0 0 30px rgba(187, 134, 252, 0.6); /* Shadow lebih cerah dan menonjol */
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 1s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .badge {
@@ -172,11 +199,37 @@ h2 {
     transform: translateY(-50%) rotate(-90deg);
     font-size: 8em;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.05);
+    color: rgba(187, 134, 252, 0.08); /* Menggunakan accent-neon baru dengan opasitas rendah */
     transform-origin: top left;
 }
 
 /* Services Section (What I Do) */
+/* Animasi masuk */
+@keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Awal sebelum muncul di layar */
+  .service-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  /* Saat muncul di layar */
+  .service-card.show {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeUp 0.6s ease-out;
+  }
+  
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -186,31 +239,39 @@ h2 {
 
 .service-card {
     background-color: var(--bg-medium);
-    padding: 30px;
-    border-radius: 10px;
+    padding: 50px 30px; /* lebih tinggi biar ikon & teks seimbang */
+    border-radius: 15px;
     border-top: 5px solid var(--accent-neon);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(127, 0, 255, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(187, 134, 252, 0.35); /* Shadow lebih menonjol */
 }
 
+/* Icon lebih besar dan menonjol */
 .service-card i {
-    font-size: 2em;
+    font-size: 3rem; /* sebelumnya 2em */
     color: var(--accent-neon);
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    transition: color 0.3s;
 }
 
+/* Judul lebih besar dan tegas */
 .service-card h3 {
     margin-top: 0;
-    font-weight: 600;
+    font-size: 1.6rem; /* lebih besar dari sebelumnya */
+    font-weight: 700;
+    color: var(--text-primary, #fff);
 }
 
+/* Hilangkan deskripsi jika masih ada */
 .service-card p {
-    color: var(--text-muted);
+    display: none;
 }
+
 
 /* Resume Section */
 .resume-section {
@@ -404,4 +465,170 @@ h2 {
     line-height: 25px;
     font-size: 0.9em;
     font-weight: 600;
+}
+
+/* Gaya untuk Hard Skills (Icon Grid) */
+.skills-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.skill-item-icon {
+    background-color: var(--bg-dark);
+    padding: 20px 10px;
+    border-radius: 8px;
+    border-top: 3px solid var(--accent-neon);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(187, 134, 252, 0.3); /* Shadow lebih menonjol */
+}
+
+.skill-item-icon i {
+    font-size: 2.5em;
+    color: var(--accent-neon);
+    margin-bottom: 10px;
+}
+
+.skill-item-icon span {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Gaya untuk Project Links */
+.project-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Pusatkan tombol */
+}
+
+.btn-project {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--accent-neon);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-project:hover {
+    background-color: #a060f0; /* Sedikit lebih gelap dari accent-neon baru */
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+    padding: 80px 0;
+    background-color: var(--bg-medium);
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+    color: var(--accent-neon);
+}
+
+.contact-description {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: var(--text-muted);
+    font-size: 1.1em;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-item i {
+    font-size: 2.5em;
+    color: var(--accent-neon);
+    margin-bottom: 10px;
+}
+
+.contact-item p {
+    margin: 0;
+    color: var(--text-light);
+    font-size: 1.1em;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid #445577;
+    border-radius: 8px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.contact-form button {
+    padding: 15px 30px;
+    background-color: var(--accent-neon);
+    color: var(--text-light);
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #a060f0; /* Sedikit lebih gelap dari accent-neon baru */
+    transform: translateY(-2px);
+}
+
+.contact-social {
+    margin-top: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-dark);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 1px solid #3e5170;
+}
+
+footer p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9em;
 }
