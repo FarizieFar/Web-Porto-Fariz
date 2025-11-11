@@ -38,44 +38,123 @@ h2 {
 }
 
 /* Navigasi */
+/* ===================== */
+/*  NAVBAR STYLING      */
+/* ===================== */
 .navbar {
+    background-color: var(--bg-dark);
+    padding: 15px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(187, 134, 252, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-dark);
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Shadow lebih menonjol */
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--text-light);
-}
-
-.logo span {
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Logo */
+  .logo {
     color: var(--accent-neon);
-}
-
-.nav-links {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-family: var(--font-family);
+  }
+  
+  .logo span {
+    color: var(--text-light);
+  }
+  
+  /* Navigation Links */
+  .nav-links {
     list-style: none;
     display: flex;
-}
-
-.nav-links a {
+    gap: 25px;
+  }
+  
+  .nav-links li a {
+    color: var(--text-light);
     text-decoration: none;
-    color: var(--text-muted);
-    margin-left: 30px;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .nav-links li a:hover,
+  .nav-links li a.active {
     color: var(--accent-neon);
-}
+  }
+  
+  .nav-links li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-neon);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links li a:hover::after,
+  .nav-links li a.active::after {
+    width: 100%;
+  }
+  
+  /* ===================== */
+  /* RESPONSIVE MENU TOGGLE */
+  /* ===================== */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+  
+  .menu-toggle span {
+    background: var(--accent-neon);
+    width: 25px;
+    height: 3px;
+    border-radius: 5px;
+  }
+  
+  /* Responsive - Mobile View */
+  @media (max-width: 768px) {
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      background: var(--bg-medium);
+      height: 100vh;
+      width: 220px;
+      flex-direction: column;
+      align-items: start;
+      padding: 60px 30px;
+      transition: right 0.3s ease;
+    }
+  
+    .nav-links.show {
+      right: 0;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .nav-links li {
+      margin: 15px 0;
+    }
+  }
+  
 
 /* Hero Section */
 .hero-section {
@@ -273,69 +352,123 @@ h2 {
 }
 
 
-/* Resume Section */
-.resume-section {
-    padding-bottom: 50px;
-}
-
-.resume-tabs {
-    background-color: var(--bg-medium);
-    padding: 40px;
-    border-radius: 10px;
-}
-
-.tab-header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.tab-header span {
-    font-size: 1.2em;
-    font-weight: 600;
-    color: var(--text-muted);
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: color 0.3s, border-bottom 0.3s;
-}
-
-.tab-header span.active {
-    color: var(--accent-neon);
-    border-bottom: 3px solid var(--accent-neon);
-}
-
 .resume-timeline {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.timeline-item {
-    border-left: 2px solid var(--accent-neon);
-    padding-left: 20px;
     position: relative;
-    margin-bottom: 20px;
-}
+    margin: 80px auto;
+    max-width: 900px;
+  }
 
-.timeline-item h3 {
-    margin-top: 0;
-    font-weight: 600;
-}
-
-.timeline-item .institution, .timeline-item .years {
-    font-size: 0.9em;
-    color: var(--text-muted);
-    margin-bottom: 5px;
-}
-
-.timeline-item .years {
-    background-color: var(--accent-neon);
-    color: var(--text-light);
-    padding: 3px 8px;
+  /* Garis tengah */
+  .resume-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background: var(--accent-neon);
     border-radius: 3px;
-    display: inline-block;
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
+  }
+
+  /* Kotak item */
+  .timeline-item {
+    position: relative;
+    width: 45%;
+    padding: 25px 30px;
+    background: var(--bg-medium);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.3);
+  }
+
+  /* Posisi kiri dan kanan */
+  .timeline-item.left {
+    left: 0;
+  }
+
+  .timeline-item.right {
+    left: 55%;
+  }
+
+  /* Titik di tengah garis */
+  .timeline-item::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    width: 18px;
+    height: 18px;
+    background: var(--accent-neon);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.7);
+    z-index: 2;
+  }
+
+  .timeline-item.left::after {
+    right: -9px;
+  }
+
+  .timeline-item.right::after {
+    left: -9px;
+  }
+
+  /* Judul tiap kategori */
+  .resume-timeline h3 {
+    text-align: center;
+    margin: 60px 0 40px 0;
+    font-size: 28px;
+    color: var(--accent-neon);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+  }
+
+  .timeline-item h4 {
+    color: var(--accent-neon);
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .timeline-item .institution {
+    font-weight: 600;
+    color: var(--text-light);
+  }
+
+  .timeline-item .years {
+    font-size: 14px;
+    color: var(--text-muted);
+    display: block;
     margin-bottom: 10px;
-}
+  }
+
+  .timeline-item .description {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* Responsif */
+  @media (max-width: 768px) {
+    .resume-timeline::before {
+      left: 8px;
+    }
+    .timeline-item {
+      width: 100%;
+      left: 0 !important;
+      margin-left: 25px;
+    }
+    .timeline-item::after {
+      left: -27px;
+    }
+  }
 
 /* Portfolio Section */
 .portfolio-section {
@@ -418,29 +551,94 @@ h2 {
     gap: 30px;
 }
 
+/* Card umum untuk skills dan project */
 .skill-item, .project-card {
-    background-color: var(--bg-dark); /* Card di dalam tab sedikit lebih gelap */
+    background-color: var(--bg-medium);
     padding: 25px;
-    border-radius: 8px;
-    border-left: 5px solid var(--accent-neon);
+    border-radius: 10px;
+    border-left: 4px solid var(--accent-neon);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-item h3, .project-card h4 {
+.skill-item:hover, .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.25);
+}
+
+/* ====================== PROJECT CARD ====================== */
+
+/* Gambar preview di atas project */
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek gambar saat hover */
+.project-card:hover .project-image {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+}
+
+.project-card h4 {
     margin-top: 0;
     color: var(--accent-neon);
+    font-weight: 600;
+    font-size: 1.1em;
 }
 
 .project-desc {
-    color: var(--text-muted);
+    color: var(--text-light);
+    margin: 10px 0 15px;
+    line-height: 1.6;
 }
 
 .project-tech {
     font-size: 0.9em;
     font-style: italic;
-    color: #999;
+    color: var(--text-muted);
     display: block;
     margin-top: 5px;
 }
+
+/* Tombol project */
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-project {
+    background-color: var(--accent-neon);
+    color: var(--bg-dark);
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-project:hover {
+    background-color: #c49cff;
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.4);
+}
+
+/* ====================== SKILL CARD ====================== */
+.skill-item h3 {
+    color: var(--accent-neon);
+    font-size: 1.1em;
+}
+
+.skill-item p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
 
 /* Gaya untuk Hard Skills (Progress Bar) */
 .skills-bar-detail h3 {

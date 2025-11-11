@@ -12,15 +12,21 @@
 
     <div class="container">
         <nav class="navbar">
-            <div class="logo"><span>&lt;/&gt;</span> FARIZIE.</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+            <div class="nav-container">
+              <div class="logo"><span>&lt;/&gt;</span> FARIZIE.</div>
+              <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#contact">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#resume">Resume</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
+              </ul>
+              <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+          </nav>
+          
 
         <section class="hero-section" id="home">
             <div class="hero-content">
@@ -28,7 +34,7 @@
                 <h1>Mohammad Alfarizi Abdullah</h1>
                 <p class="role">Seorang Pengembang Web & Desainer UI/UX</p>
                 <p class="description">Saya adalah seorang pengembang web yang bersemangat dari Indonesia, dengan keahlian dalam mengubah ide-ide kreatif dan tantangan desain menjadi solusi digital yang fungsional dan menarik. Saya memiliki pengalaman dalam membangun antarmuka pengguna yang responsif dan intuitif, serta mengoptimalkan pengalaman pengguna untuk berbagai platform.</p>
-                <a href="#about" class="btn-primary">Selengkapnya tentang saya</a>
+                <a href="#contact" class="btn-primary">Selengkapnya tentang saya</a>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -38,7 +44,7 @@
             </div>
             <div class="hero-image">
                 <img src="foto.jpeg" alt="Foto Profil">
-                <div class="badge">Pengalaman 2+ Tahun</div>
+                <div class="badge">IT Enthusiast & Web Developer</div>
             </div>
             <div class="watermark">FARIZIE</div>
         </section>
@@ -87,41 +93,45 @@
                     
                     <div class="tab-content active" id="cv">
                         <div class="resume-timeline">
-                            <h3>Pendidikan</h3>
-                            <div class="timeline-item">
-                                <h4>Diploma III Teknik Informatika</h4>
-                                <p class="institution">Politeknik Negeri Malang</p>
-                                <span class="years">2021 - 2025</span>
-                                <p class="description">Fokus studi pada pengembangan perangkat lunak, jaringan komputer, dan sistem informasi. Mata kuliah relevan: Struktur Data, Algoritma, Pemrograman Web, Basis Data, Rekayasa Perangkat Lunak, Jaringan Komputer.</p>
-                            </div>
-                            <h3>Pengalaman Kerja</h3>
-                            <div class="timeline-item">
-                                <h4>Frontend Developer</h4>
-                                <p class="institution">CV. Sinergi Teknokarya</p>
-                                <span class="years">Agustus 2024 - Desember 2024</span>
-                                <p class="description">Bertanggung jawab atas pembuatan dan melakukan slicing web landing page atau menu lainnya dengan berkolaborasi bersama divisi UI/UX Desainer. Mengembangkan antarmuka pengguna yang responsif dan interaktif menggunakan HTML, CSS, dan JavaScript.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <h4>Asisten Laboratorium Komputer</h4>
-                                <p class="institution">Politeknik Negeri Malang</p>
-                                <span class="years">Maret 2023 - Sekarang</span>
-                                <p class="description">Membantu mahasiswa dalam praktikum pemrograman, mengelola perangkat keras dan lunak laboratorium, serta memberikan dukungan teknis.</p>
-                            </div>
-                            <h3>Sertifikasi</h3>
-                            <div class="timeline-item">
-                                <h4>Certified Web Developer</h4>
-                                <p class="institution">Dicoding Indonesia</p>
-                                <span class="years">2024</span>
-                                <p class="description">Sertifikasi dalam pengembangan web front-end dan back-end, mencakup HTML, CSS, JavaScript, Node.js, dan React.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <h4>UI/UX Design Specialist</h4>
-                                <p class="institution">Google Coursera</p>
-                                <span class="years">2023</span>
-                                <p class="description">Sertifikasi dalam prinsip-prinsip desain UI/UX, wireframing, prototyping, dan user testing.</p>
-                            </div>
+                          <h3>Pendidikan</h3>
+                          <div class="timeline-item right" data-aos="fade-left">
+                            <h4>Diploma IV Teknik Informatika</h4>
+                            <p class="institution">Politeknik Negeri Malang</p>
+                            <span class="years">2021 - 2025</span>
+                            <p class="description">Fokus studi pada pengembangan perangkat lunak, jaringan komputer, dan sistem informasi. Mata kuliah relevan: Struktur Data, Algoritma, Pemrograman Web, Basis Data, Rekayasa Perangkat Lunak, Jaringan Komputer.</p>
+                          </div>
+                      
+                          <h3>Pengalaman Kerja</h3>
+                          <div class="timeline-item left" data-aos="fade-right">
+                            <h4>Frontend Developer</h4>
+                            <p class="institution">CV. Sinergi Teknokarya</p>
+                            <span class="years">Agustus 2024 - Desember 2024</span>
+                            <p class="description">Bertanggung jawab atas pembuatan dan melakukan slicing web landing page atau menu lainnya dengan berkolaborasi bersama divisi UI/UX Desainer. Mengembangkan antarmuka pengguna yang responsif dan interaktif menggunakan HTML, CSS, dan JavaScript.</p>
+                          </div>
+                      
+                          <div class="timeline-item left" data-aos="fade-right">
+                            <h4>Asisten Laboratorium Komputer</h4>
+                            <p class="institution">Politeknik Negeri Malang</p>
+                            <span class="years">Maret 2023 - Sekarang</span>
+                            <p class="description">Membantu mahasiswa dalam praktikum pemrograman, mengelola perangkat keras dan lunak laboratorium, serta memberikan dukungan teknis.</p>
+                          </div>
+                      
+                          <h3>Sertifikasi</h3>
+                          <div class="timeline-item left" data-aos="fade-right">
+                            <h4>Certified Web Developer</h4>
+                            <p class="institution">Dicoding Indonesia</p>
+                            <span class="years">2024</span>
+                            <p class="description">Sertifikasi dalam pengembangan web front-end dan back-end, mencakup HTML, CSS, JavaScript, Node.js, dan React.</p>
+                          </div>
+                      
+                          <div class="timeline-item left" data-aos="fade-right">
+                            <h4>UI/UX Design Specialist</h4>
+                            <p class="institution">Google Coursera</p>
+                            <span class="years">2023</span>
+                            <p class="description">Sertifikasi dalam prinsip-prinsip desain UI/UX, wireframing, prototyping, dan user testing.</p>
+                          </div>
                         </div>
-                    </div>
+                      </div>
 
                     <div class="tab-content" id="softskills">
                         <div class="skills-list-detail">
@@ -196,38 +206,60 @@
                     <div class="tab-content" id="projects">
                         <div class="project-mini-grid">
                             <div class="project-card">
+                                <img src="preview-ecommerce.png" alt="Preview Website Mini E-Commerce" class="project-image">
                                 <h4>Website Mini E-Commerce</h4>
-                                <p class="project-desc">Toko online sederhana dengan fitur keranjang dan checkout. <span class="project-tech">Tech: React, Styled-Components.</span></p>
+                                <p class="project-desc">
+                                    Toko online sederhana dengan fitur keranjang dan checkout.
+                                    <span class="project-tech">Tech: React, Styled-Components.</span>
+                                </p>
                                 <div class="project-links">
                                     <a href="#" class="btn-project">Preview</a>
-                                    <a href="#" class="btn-project">Live Project</a>
+                                    <a href="https://mini-ecommerce-henna.vercel.app/" class="btn-project">Live Project</a>
                                 </div>
                             </div>
+                    
                             <div class="project-card">
+                                <img src="preview-indexing.png" alt="Preview AI Based Book Indexing" class="project-image">
                                 <h4>AI Based Book Indexing</h4>
-                                <p class="project-desc">Aplikasi website berbasis python yang digunakan untuk membuat indeks buku yang terdapat pada akhir buku seperti kata kunci. <span class="project-tech">Tools: Python, Flask, HTML, CSS.</span></p>
+                                <p class="project-desc">
+                                    Aplikasi website berbasis python yang digunakan untuk membuat indeks buku
+                                    yang terdapat pada akhir buku seperti kata kunci.
+                                    <span class="project-tech">Tools: Python, Flask, HTML, CSS.</span>
+                                </p>
                                 <div class="project-links">
                                     <a href="#" class="btn-project">Preview</a>
                                     <a href="#" class="btn-project">Live Project</a>
                                 </div>
                             </div>
+                    
                             <div class="project-card">
+                                <img src="preview-habbit.png" alt="Preview Habbit Tracker" class="project-image">
                                 <h4>Habbit Tracker</h4>
-                                <p class="project-desc">Aplikasi website todo list sederhana yang digunakan untuk mencatat kegiatan atau aktivitas sehari-hari. <span class="project-tech">Tools: Figma, Adobe Ill.</span></p>
+                                <p class="project-desc">
+                                    Aplikasi website todo list sederhana yang digunakan untuk mencatat kegiatan
+                                    atau aktivitas sehari-hari.
+                                    <span class="project-tech">Tools: Figma, Adobe Ill.</span>
+                                </p>
                                 <div class="project-links">
                                     <a href="#" class="btn-project">Preview</a>
                                     <a href="#" class="btn-project">Live Project</a>
                                 </div>
                             </div>
+                    
                             <div class="project-card">
+                                <img src="preview-arsip.png" alt="Preview Website Arsip Sederhana" class="project-image">
                                 <h4>Website Arsip Sederhana</h4>
-                                <p class="project-desc">Website yang digunakan untuk mengarsipkan surat-surat penting, cocok untuk menyimpan file-file penting yang digunakan secara berulang <span class="project-tech">Tools: Figma, Adobe Ill.</span></p>
+                                <p class="project-desc">
+                                    Website yang digunakan untuk mengarsipkan surat-surat penting,
+                                    cocok untuk menyimpan file-file penting yang digunakan secara berulang.
+                                    <span class="project-tech">Tools: Figma, Adobe Ill.</span>
+                                </p>
                                 <div class="project-links">
                                     <a href="#" class="btn-project">Preview</a>
                                     <a href="#" class="btn-project">Live Project</a>
                                 </div>
                             </div>
-                             </div>
+                        </div>
                     </div>
                     
                 </div>
@@ -254,11 +286,11 @@
         <div class="contact-info">
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <p>fariziefar@gmail.com</p>
+                <p>aalfarizi688@gmail.com</p>
             </div>
             <div class="contact-item">
                 <i class="fas fa-phone-alt"></i>
-                <p>+62 812-3456-7890</p>
+                <p>+62 821-1770-0355</p>
             </div>
             <div class="contact-item">
                 <i class="fas fa-map-marker-alt"></i>
@@ -275,7 +307,7 @@
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-linkedin-in"></i></a>
             <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="instagram.com/alfar.abd"><i class="fab fa-instagram"></i></a>
         </div>
     </section>
 
@@ -316,6 +348,14 @@
   }, { threshold: 0.2 }); // muncul saat 20% terlihat
 
   cards.forEach(card => observer.observe(card));
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    menuToggle.classList.toggle('active');
+  });
     </script>
 </body>
 </html>
