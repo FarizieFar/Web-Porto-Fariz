@@ -158,12 +158,11 @@ h2 {
 
 /* Hero Section */
 .hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 100px 50px;
 }
 
 .hero-content {
@@ -174,6 +173,15 @@ h2 {
     animation: fadeInContent 1s ease-out forwards;
     animation-delay: 0.5s;
 }
+
+.highlight {
+  color: var(--accent-neon);
+  font-weight: bold;
+  text-shadow: 0 0 8px var(--accent-neon);
+}
+
+
+
 
 @keyframes fadeInContent {
     to {
@@ -339,9 +347,8 @@ h2 {
   
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
   }
   
   .service-card {
@@ -674,6 +681,11 @@ h2 {
     display: block;
     margin-top: 5px;
 }
+.project-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
 
 /* Tombol project */
 .project-links {
@@ -816,11 +828,9 @@ h2 {
 }
 
 .contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
 .contact-item {
@@ -971,4 +981,117 @@ footer p {
     margin: 0;
     color: var(--text-muted);
     font-size: 0.9em;
+}
+
+/* ===============================
+   🌐 Responsive Layout
+   =============================== */
+
+/* Untuk tablet dan handphone (maksimum lebar 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    background: white;
+    height: 3px;
+    margin: 4px;
+    width: 25px;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .project-mini-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Untuk handphone kecil (maksimum lebar 600px) */
+@media (max-width: 600px) {
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8em;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-timeline .timeline-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .social-links a {
+    font-size: 1.4em;
+  }
+
+  footer p {
+    font-size: 0.85em;
+  }
 }
