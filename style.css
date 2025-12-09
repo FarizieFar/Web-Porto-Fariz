@@ -903,20 +903,112 @@ h2 {
     margin-top: 40px;
 }
 
+/* === Biodata Section === */
+.biodata-section {
+    padding: 80px 10%;
+    color: var(--text-light);
+    text-align: center;
+}
+
+.biodata-section h2 {
+    color: var(--accent-neon);
+    font-size: 2.2em;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.biodata-section h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent-neon);
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.biodata-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.biodata-card {
+    background-color: var(--bg-medium);
+    padding: 30px 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.biodata-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-blue);
+}
+
+.biodata-card i {
+    font-size: 2.5em;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.biodata-card:hover i {
+    color: var(--accent-neon);
+    transform: scale(1.1);
+}
+
+.biodata-card h3 {
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.biodata-info {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.biodata-info p {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+}
+
+.biodata-info strong {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.biodata-info ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.biodata-info li {
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
 /* === Achievements Section === */
 .achievements-section {
     padding: 80px 10%;
     color: var(--text-light);
     text-align: center;
   }
-  
+
   .achievements-section h2 {
     color: var(--accent-neon);
     font-size: 2.2em;
     margin-bottom: 40px;
     position: relative;
   }
-  
+
   .achievements-section h2::after {
     content: "";
     display: block;
@@ -926,13 +1018,13 @@ h2 {
     margin: 10px auto 0;
     border-radius: 5px;
   }
-  
+
   .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
   }
-  
+
 .achievement-card {
     background-color: var(--bg-card);
     padding: 25px;
@@ -958,13 +1050,13 @@ h2 {
     margin-bottom: 10px;
     font-size: 1.3em;
   }
-  
+
   .achievement-card p {
     color: var(--text-muted);
     font-size: 0.95em;
     line-height: 1.6;
   }
-  
+
   .achievement-year {
     display: inline-block;
     margin-top: 15px;
@@ -979,6 +1071,16 @@ h2 {
 .animate-section {
     opacity: 0;
     transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Biodata Section - Fade in from bottom */
+.biodata-section.animate-section {
+    transform: translateY(50px);
+}
+
+.biodata-section.animate-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Services Section - Slide in from left */
@@ -1166,6 +1268,20 @@ footer p {
 
     .skills-icon-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    /* Biodata Section */
+    .biodata-section {
+        padding: 60px 5%;
+    }
+
+    .biodata-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .biodata-card {
+        padding: 25px 20px;
     }
 
     /* Achievements Section */

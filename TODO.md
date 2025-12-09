@@ -19,5 +19,13 @@
 - [x] Add media queries for smaller screens (max-width: 480px) if needed
 - [x] Test responsiveness across different screen sizes
 
+## New Tasks for Biodata Section
+- [x] Add Biodata section HTML in index.html after hero section
+- [x] Update navigation links to include "#biodata" anchor
+- [x] Add CSS styles in style.css for biodata section with responsive design
+- [x] Improve biodata section appearance to match theme (neat layout, consistent styling)
+- [x] Test biodata section display and responsiveness
+- [x] Verify navigation link works correctly
+
 ## Summary
-The portfolio website needs full responsiveness. Current responsive features are limited to navbar and resume timeline. Hero section and other elements require mobile adjustments to stack and resize properly.
+The portfolio website needs full responsiveness. Current responsive features are limited to navbar and resume timeline. Hero section and other elements require mobile adjustments to stack and resize properly. Now adding Biodata section for personal information.
