@@ -1055,3 +1055,178 @@ footer p {
     font-size: 0.9em;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 2em;
+        padding-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 20px;
+        margin: 10px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .typing-text {
+        font-size: 2.5em;
+        width: 100%;
+        animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+        to {
+            width: 100%;
+        }
+    }
+
+    .role {
+        font-size: 1.2em;
+    }
+
+    .description {
+        font-size: 0.9em;
+    }
+
+    .hero-image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-image img {
+        width: 60%;
+    }
+
+    .badge {
+        position: static;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+    .watermark {
+        display: none;
+    }
+
+    /* Services Section */
+    .services-section {
+        padding: 60px 5%;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    /* Resume Section */
+    .resume-section {
+        padding: 60px 5%;
+    }
+
+    .tab-header {
+        flex-wrap: wrap;
+    }
+
+    .tab-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+        margin: 5px;
+    }
+
+    .skills-list-detail, .project-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-icon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    /* Achievements Section */
+    .achievements-section {
+        padding: 60px 5%;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 60px 5%;
+    }
+
+    .contact-info {
+        gap: 30px;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .typing-text {
+        font-size: 2em;
+    }
+
+    .role {
+        font-size: 1.1em;
+    }
+
+    .description {
+        font-size: 0.85em;
+    }
+
+    .hero-image img {
+        width: 80%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
