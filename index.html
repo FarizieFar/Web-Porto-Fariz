@@ -55,7 +55,7 @@
             <div class="watermark">FARIZIE</div>
         </section>
 
-        <section class="services-section" id="services">
+        <section class="services-section animate-section" id="services">
             <h2>What I Do</h2>
             <div class="services-grid">
               <div class="service-card">
@@ -102,7 +102,7 @@
           
           
 
-        <section class="resume-section" id="resume">
+        <section class="resume-section animate-section" id="resume">
             <h2>My Resume</h2>
             <div class="resume-tabs">
                 <div class="tab-header">
@@ -303,7 +303,7 @@
             </div>
         </section>
 
-        <section class="achievements-section" id="achievements">
+        <section class="achievements-section animate-section" id="achievements">
             <h2>Achievements</h2>
             <div class="achievements-grid">
               <div class="achievement-card">
@@ -408,6 +408,7 @@
   });
 
   const serviceCards = document.querySelectorAll('.service-card');
+  const animateSections = document.querySelectorAll('.animate-section');
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -419,6 +420,7 @@
   }, { threshold: 0.2 });
 
   serviceCards.forEach(card => observer.observe(card));
+  animateSections.forEach(section => observer.observe(section));
 
     </script>
 </body>

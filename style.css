@@ -3,7 +3,7 @@
     --bg-dark: #161b22; /* Latar belakang gelap utama, lebih dalam */
     --bg-medium: #21262d; /* Latar belakang card/elemen, lebih gelap */
     --accent-blue: #007bff; /* Warna biru aksen (diganti nanti untuk ungu neon) */
-    --accent-neon: #bb86fc; /* Ungu neon yang lebih cerah dan modern */
+    --accent-neon: #007bff; /* Warna biru yang ada */
     --text-light: #e0e0e0; /* Teks terang, sedikit lebih lembut */
     --text-muted: #a0a0a0; /* Teks muted, lebih lembut */
     --font-family: 'Poppins', sans-serif;
@@ -15,8 +15,9 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: var(--bg-dark);
+    background: var(--bg-dark);
     color: var(--text-light);
+    min-height: 100vh;
 }
 
 .container {
@@ -63,15 +64,15 @@ h2 {
   
   /* Logo */
   .logo {
-    color: var(--accent-neon);
+    color: var(--accent-blue);
     font-weight: 700;
     font-size: 1.5rem;
     letter-spacing: 1px;
     font-family: var(--font-family);
   }
-  
+
   .logo span {
-    color: var(--text-light);
+    color: var(--text-dark);
   }
   
   /* Navigation Links */
@@ -121,7 +122,7 @@ h2 {
   }
   
   .menu-toggle span {
-    background: var(--accent-neon);
+    background: var(--accent-blue);
     width: 25px;
     height: 3px;
     border-radius: 5px;
@@ -164,6 +165,10 @@ h2 {
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+    background: var(--bg-light);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 10px 30px var(--shadow);
 }
 
 .hero-content {
@@ -205,14 +210,14 @@ h2 {
     color: var(--accent-neon);
 }
 
-/* Efek mengetik */
-.typing-text {
+  /* Efek mengetik */
+  .typing-text {
     font-size: 3.5em;
     margin: 0;
-    color: var(--text-light);
+    color: var(--text-dark);
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid var(--accent-neon);
+    border-right: 3px solid var(--accent-blue);
     width: 0;
     animation: typing 4s steps(40, end) forwards, blink 0.75s step-end infinite;
   }
@@ -251,12 +256,13 @@ h2 {
 .btn-primary {
     display: inline-block;
     padding: 12px 30px;
-    background-color: var(--accent-neon);
-    color: var(--text-light);
+    background: var(--bg-gradient);
+    color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: 600;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
 }
 
 .social-links {
@@ -285,8 +291,8 @@ h2 {
 .hero-image img {
     width: 80%;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 0 30px rgba(187, 134, 252, 0.6); /* Shadow lebih cerah dan menonjol */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow);
     opacity: 0;
     transform: scale(0.9);
     animation: fadeInScale 1s ease-out forwards;
@@ -318,7 +324,7 @@ h2 {
     transform: translateY(-50%) rotate(-90deg);
     font-size: 8em;
     font-weight: 700;
-    color: rgba(187, 134, 252, 0.08); /* Menggunakan accent-neon baru dengan opasitas rendah */
+    color: rgba(74, 144, 226, 0.08);
     transform-origin: top left;
 }
 
@@ -354,37 +360,37 @@ h2 {
   }
   
   .service-card {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-card);
     padding: 40px 20px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(187, 134, 252, 0.15);
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.05);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(74, 144, 226, 0.1);
+    box-shadow: 0 5px 15px var(--shadow);
   }
-  
+
   .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(187, 134, 252, 0.3);
-    border-color: var(--accent-neon);
+    box-shadow: 0 15px 35px var(--shadow);
+    border-color: var(--accent-blue);
   }
-  
+
   .service-card i {
     font-size: 2.5em;
-    color: var(--accent-neon);
+    color: var(--accent-blue);
     margin-bottom: 15px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
   }
-  
+
   .service-card:hover i {
-    color: #fff;
+    color: var(--accent-purple);
     transform: scale(1.1);
   }
-  
+
   .service-card h3 {
     margin: 0;
     font-size: 1.1em;
     font-weight: 600;
-    color: var(--accent-neon);
+    color: var(--accent-blue);
   }
   
   
@@ -406,9 +412,9 @@ h2 {
     transform: translateX(-50%);
     width: 3px;
     height: 100%;
-    background: var(--accent-neon);
+    background: var(--accent-blue);
     border-radius: 3px;
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
+    box-shadow: 0 0 15px var(--shadow);
   }
 
   /* Kotak item */
@@ -425,7 +431,7 @@ h2 {
 
   .timeline-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.3);
+    box-shadow: 0 10px 30px var(--shadow);
   }
 
   /* Posisi kiri dan kanan */
@@ -470,7 +476,7 @@ h2 {
   }
 
   .timeline-item h4 {
-    color: var(--accent-neon);
+    color: var(--accent-blue);
     margin-bottom: 8px;
     font-size: 18px;
     font-weight: 600;
@@ -610,8 +616,8 @@ h2 {
 }
 
 .tab-button.active {
-    color: var(--accent-neon);
-    border-bottom: 3px solid var(--accent-neon);
+    color: var(--accent-blue);
+    border-bottom: 3px solid var(--accent-blue);
 }
 
 .tab-content {
@@ -651,16 +657,16 @@ h2 {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-bottom: 15px;
-    border: 1px solid rgba(187, 134, 252, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    transition: all 0.3s ease;
 }
 
 /* Efek gambar saat hover */
 .project-card:hover .project-image {
     transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+    box-shadow: 0 10px 25px var(--shadow);
 }
 
 .project-card h4 {
@@ -692,19 +698,19 @@ h2 {
 }
 
 .btn-project {
-    background-color: var(--accent-neon);
-    color: var(--bg-dark);
+    background: var(--bg-gradient);
+    color: white;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 20px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
 }
 
 .btn-project:hover {
-    background-color: #c49cff;
     transform: translateY(-2px);
-    box-shadow: 0 0 10px rgba(187, 134, 252, 0.4);
+    box-shadow: 0 8px 25px var(--shadow);
 }
 
 /* ====================== SKILL CARD ====================== */
@@ -753,21 +759,22 @@ h2 {
 }
 
 .skill-item-icon {
-    background-color: var(--bg-dark);
+    background-color: var(--bg-card);
     padding: 20px 10px;
-    border-radius: 8px;
-    border-top: 3px solid var(--accent-neon);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 12px;
+    border-top: 3px solid var(--accent-blue);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px var(--shadow);
 }
 
 .skill-item-icon:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(187, 134, 252, 0.3); /* Shadow lebih menonjol */
+    box-shadow: 0 15px 35px var(--shadow);
 }
 
 .skill-item-icon i {
     font-size: 2.5em;
-    color: var(--accent-neon);
+    color: var(--accent-blue);
     margin-bottom: 10px;
 }
 
@@ -838,7 +845,7 @@ h2 {
 
 .contact-item i {
     font-size: 2.5em;
-    color: var(--accent-neon);
+    color: var(--accent-blue);
     margin-bottom: 10px;
 }
 
@@ -925,28 +932,28 @@ h2 {
     gap: 25px;
   }
   
-  .achievement-card {
-    background-color: var(--bg-dark);
+.achievement-card {
+    background-color: var(--bg-card);
     padding: 25px;
-    border-radius: 12px;
-    border-left: 5px solid var(--accent-neon);
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+    border-left: 5px solid var(--accent-blue);
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: all 0.3s ease;
   }
-  
+
   .achievement-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 0 25px rgba(187, 134, 252, 0.25);
+    box-shadow: 0 15px 35px var(--shadow);
   }
-  
+
   .achievement-icon {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: var(--accent-neon);
+    color: var(--accent-blue);
   }
-  
+
   .achievement-card h4 {
-    color: var(--accent-neon);
+    color: var(--accent-blue);
     margin-bottom: 10px;
     font-size: 1.3em;
   }
@@ -967,6 +974,71 @@ h2 {
     border-radius: 5px;
   }
   
+/* Scroll Animations */
+.animate-section {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Services Section - Slide in from left */
+.services-section.animate-section {
+    transform: translateX(-100px);
+}
+
+.services-section.animate-section.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Resume Section - Zoom in */
+.resume-section.animate-section {
+    transform: scale(0.8);
+}
+
+.resume-section.animate-section.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Achievements Section - Slide in from right */
+.achievements-section.animate-section {
+    transform: translateX(100px);
+}
+
+.achievements-section.animate-section.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Contact Section - Bounce in */
+.contact-section.animate-section {
+    transform: translateY(100px);
+}
+
+.contact-section.animate-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounceIn 0.8s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-20px) scale(1.05);
+    }
+    70% {
+        transform: translateY(10px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
 /* Footer */
 footer {
     background-color: var(--bg-dark);
